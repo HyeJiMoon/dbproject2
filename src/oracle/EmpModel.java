@@ -1,4 +1,4 @@
-//emp 테이블의 데이터를 처리하는 컨트롤러!
+//emp 테이블의 데이터를 처리하는 컨트롤러! 
 package oracle;
 
 import java.sql.Connection;
@@ -61,10 +61,8 @@ public class EmpModel extends AbstractTableModel{
 				column=new String[count]; //count만큼 배열 생성!
 				//컬럼명을 채우자
 				for(int i=0;i<column.length;i++){
-					column[i]=meta.getColumnName(i+1); //첫번째컬럼을 1이라고 생각하므로 i+1
-					
-				}
-				
+					column[i]=meta.getColumnName(i+1); //첫번째컬럼을 1이라고 생각하므로 i+1		
+				}		
 				rs.last();//제일마지막으로 보냄
 				int total=rs.getRow(); //레코드 번호
 				rs.beforeFirst();
