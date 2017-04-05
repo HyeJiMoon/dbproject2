@@ -6,6 +6,7 @@ import java.awt.Checkbox;
 import java.awt.CheckboxGroup;
 import java.awt.Choice;
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Image;
@@ -16,7 +17,6 @@ import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -28,7 +28,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Locale.Category;
 
 import javax.imageio.ImageIO;
 import javax.swing.JButton;
@@ -280,6 +279,10 @@ public class BookMain extends JFrame implements ItemListener,ActionListener{
 	}
 	//상품등록 메서드
 	public void regist(){
+		//기존에 등록된 자식(추가된컴포넌트)이 있다면 컴포넌트 지우기 
+		Component[] comp=p_grid.getComponents(); //p.grid 가 보유하고 있는ㄷ 컴포넌트들
+		System.out.println("포함한 자식은"+comp.length);
+		
 		//내가 지금 선택한 서브 카테고리 초이스의 index를구해서 그 index로 어레이리스트를 접근하여 
 		//객체를 반환받으면 정보를 유용하게 쓸 수 있다.
 		int index=ch_sub.getSelectedIndex();
